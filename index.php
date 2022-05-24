@@ -45,7 +45,10 @@
                         <div class="content-header-wrapper">
                             <h2 class="title">My Drive</h2>
                             <div class="actions">
-                                <button class="btn btn-success"><i class="fa fa-plus"></i> Upload New Item</button>
+                                <form action="./modules/upload.php" method="POST" enctype = "multipart/form-data">
+                                    <input type="file" name="fileToUpload">
+                                    <button class="btn btn-success"><i class="fa fa-plus"></i>Upload File</button>
+                                </form>
                             </div>
                         </div>
                         <div class="content-utilities">
