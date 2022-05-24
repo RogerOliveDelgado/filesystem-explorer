@@ -47,7 +47,7 @@
                             <div class="actions">
                                 <form action="./modules/upload.php" method="POST" enctype = "multipart/form-data">
                                     <input type="file" name="fileToUpload">
-                                    <button class="btn btn-success"><i class="fa fa-plus"></i>Upload File</button>
+                                    <input type ="submit" name="submit" class="btn btn-success"><i class="fa fa-plus"></i>Upload File</input>
                                 </form>
                             </div>
                         </div>
