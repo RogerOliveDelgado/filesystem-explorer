@@ -44,12 +44,14 @@ searchButton.addEventListener('click', (e) => {
 
 async function nextDirectory(dirName){
     try{
-        const response = await fetch(`${mainPath}/${nextFileUrl}`,{
+        const response = await fetch(`${mainPath}${nextFileUrl}`,{
         method: 'POST',
         headers: {"content-type": "application/json; chartset=UTF-8"},
         body: JSON.stringify(dirName)
     })
+    console.log(response)
     const nextDirFiles = await response.json()
+    console.log(nextDirFiles)
     renderFiles(nextDirFiles, fileContainer)
     } catch(error){
         console.error(error)
