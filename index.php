@@ -1,3 +1,10 @@
+<?php
+session_start();
+require("./modules/file-information.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +93,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="drive-wrapper drive-grid-view">
+
+
+                        <!-- STARTS HERE Container of all cards -->
+                        <!-- <div class="drive-wrapper drive-grid-view">
                             <div class="grid-items-wrapper">
                                 <div class="drive-item module text-center">
                                     <div class="drive-item-inner module-inner">
@@ -116,7 +126,213 @@
                                         </ul>
                                     </div>
                                 </div>
-                        </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Deck Lorem Ipsum.ppt</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><i class="fa fa-file-powerpoint-o text-warning"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Project Tasks.csv</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><i class="fa fa-file-excel-o text-success"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Project Brief.pdf</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><i class="fa fa-file-pdf-o text-danger"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Image DS1341.JPG</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><img class="img-responsive" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Image DS3214.JPG</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><img class="img-responsive" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">UX Resource</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><i class="fa fa-folder text-primary"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Prototypes</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><i class="fa fa-folder text-primary"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Sketch-source-files.zip</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><i class="fa fa-file-zip-o text-primary"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Quisque.doc</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><i class="fa fa-file-word-o text-info"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Aenean imperdiet.doc</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><i class="fa fa-file-word-o text-info"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">demo.html</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><i class="fa fa-file-code-o text-primary"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="drive-item module text-center">
+                                    <div class="drive-item-inner module-inner">
+                                        <div class="drive-item-title"><a href="#">Image DS2314.JPG</a></div>
+                                        <div class="drive-item-thumb">
+                                            <a href="#"><img class="img-responsive" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="drive-item-footer module-footer">
+                                        <ul class="utilities list-inline">
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download"><i class="fa fa-download"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- ENDS HERE Container of all cards -->
+
+
+
+
+
+
+
+
+
+
+<!-- Testing uploading files and displaying file information on the screen -->
+
+<div style="background: lightgrey">
+<?php 
+
+
+echo "<p>File name: " .createName(). "</p>"; 
+echo "<p>Uploaded: " .creationDate(). "</p>"; 
+echo "<p>File size: " .size(). "</p>"; 
+echo "<p>File extension: " .extension(). "</p>"; 
+
+?>
+</div>
+
+
+
+
+
+
+
+
+
+
+
                         <div class="drive-wrapper drive-list-view">
                             <div class="table-responsive drive-items-table-wrapper">
                                 <table class="table">
@@ -126,6 +342,10 @@
                                             <th class="name truncate">Name</th>
                                             <th class="date">Uploaded</th>
                                             <th class="size">Size</th>
+                                            <!-- Added for us -->
+                                            <th class="last_modified">Last modified</th>
+                                            <th class="extension">Extension</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
