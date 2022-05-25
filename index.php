@@ -1,7 +1,6 @@
 <?php
 session_start();
 require("./modules/file-information.php");
-
 ?>
 
 
@@ -44,7 +43,7 @@ require("./modules/file-information.php");
                             </ul>
                         </nav>
                     </div>
-                    <div class="content-panel">
+                    <div class="content-panel" id="controlPanel">
                         <div class="content-header-wrapper">
                             <h2 class="title">Assembler Drive</h2>
                             <div class="actions">
@@ -93,12 +92,9 @@ require("./modules/file-information.php");
                                 </div>
                             </div>
                         </div>
-
-
-                        <!-- STARTS HERE Container of all cards -->
-                        <!-- <div class="drive-wrapper drive-grid-view">
-                            <div class="grid-items-wrapper">
-                                <div class="drive-item module text-center">
+                        <div class="drive-wrapper drive-grid-view">
+                            <div id = "fileContainer"class="grid-items-wrapper">
+                                <!-- <div class="drive-item module text-center">
                                     <div class="drive-item-inner module-inner">
                                         <div class="drive-item-title"><a href="#">Meeting Notes.txt</a></div>
                                         <div class="drive-item-thumb">
@@ -294,45 +290,21 @@ require("./modules/file-information.php");
                                             <li><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash"></i></a></li>
                                         </ul>
                                     </div>
+-->
                                 </div>
                             </div>
-                        </div> -->
-
-                        <!-- ENDS HERE Container of all cards -->
-
-
+                        </div> 
+                        <div style="background: lightgrey"> -->
+                            <?php 
 
 
+                            echo "<p>File name: " .createName(). "</p>"; 
+                            echo "<p>Uploaded: " .creationDate(). "</p>"; 
+                            echo "<p>File size: " .size(). "</p>"; 
+                            echo "<p>File extension: " .extension(). "</p>"; 
 
-
-
-
-
-
-<!-- Testing uploading files and displaying file information on the screen -->
-
-<div style="background: lightgrey">
-<?php 
-
-
-echo "<p>File name: " .createName(). "</p>"; 
-echo "<p>Uploaded: " .creationDate(). "</p>"; 
-echo "<p>File size: " .size(). "</p>"; 
-echo "<p>File extension: " .extension(). "</p>"; 
-
-?>
-</div>
-
-
-
-
-
-
-
-
-
-
-
+                            ?>
+                        </div>
                         <div class="drive-wrapper drive-list-view">
                             <div class="table-responsive drive-items-table-wrapper">
                                 <table class="table">
