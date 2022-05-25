@@ -1,3 +1,10 @@
+<?php
+session_start();
+require("./modules/file-information.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,7 +92,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="drive-wrapper drive-grid-view">
+
+
+                        <!-- STARTS HERE Container of all cards -->
+                        <!-- <div class="drive-wrapper drive-grid-view">
                             <div class="grid-items-wrapper">
                                 <div class="drive-item module text-center">
                                     <div class="drive-item-inner module-inner">
@@ -285,7 +295,42 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+
+                        <!-- ENDS HERE Container of all cards -->
+
+
+
+
+
+
+
+
+
+
+<!-- Testing uploading files and displaying file information on the screen -->
+
+<div style="background: lightgrey">
+<?php 
+
+
+echo "<p>File name: " .createName(). "</p>"; 
+echo "<p>Uploaded: " .creationDate(). "</p>"; 
+echo "<p>File size: " .size(). "</p>"; 
+echo "<p>File extension: " .extension(). "</p>"; 
+
+?>
+</div>
+
+
+
+
+
+
+
+
+
+
 
                         <div class="drive-wrapper drive-list-view">
                             <div class="table-responsive drive-items-table-wrapper">
@@ -296,6 +341,10 @@
                                             <th class="name truncate">Name</th>
                                             <th class="date">Uploaded</th>
                                             <th class="size">Size</th>
+                                            <!-- Added for us -->
+                                            <th class="last_modified">Last modified</th>
+                                            <th class="extension">Extension</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
