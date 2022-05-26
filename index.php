@@ -84,21 +84,22 @@ require("./modules/file-information.php");
                                     <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Report spam"><i class="fa fa-exclamation-triangle"></i></button>
                                     <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></button>
                                 </div>
-                                <div class="wrap">
+                                <!-- <div class="wrap">
                                     <div class="search">
                                         <input type="text" class="searchTerm" id="searchContent" name="searchContent" placeholder="What are you looking for?">
                                         <button type="submit" class="searchButton" id="searchButton"><i class="fa fa-search"></i></button>
                                     </div>
-                                </div>
+                                </div> -->
+                                <button id="previousDirButton">Back</button>
                             </div>
                         </div>
-                        <div class="drive-wrapper drive-grid-view">
-                            <div id = "fileContainer"class="grid-items-wrapper">
-                                <!-- <div class="drive-item module text-center">
+                        <div class="drive-wrapper drive-grid-view file-container">
+                            <div id = "fileContainer" class="grid-items-wrapper">
+                                <!--<div class="drive-item module text-center">
                                     <div class="drive-item-inner module-inner">
                                         <div class="drive-item-title"><a href="#">Meeting Notes.txt</a></div>
                                         <div class="drive-item-thumb">
-                                            <a href="#"><i class="fa fa-file-text-o text-primary"></i></a>
+                                            <a href="#"><i class="fa fa-folder"></i></a>
                                         </div>
                                     </div>
                                     <div class="drive-item-footer module-footer">
@@ -408,6 +409,5 @@ require("./modules/file-information.php");
             </section>
         </div>
     </div>
-</style>
 </body>
 </html>

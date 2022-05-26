@@ -4,6 +4,7 @@ import {previousFolder, nextFolder} from './directories.js'
 
 const searchContent = document.getElementById('searchContent')
 const searchButton = document.getElementById('searchButton')
+const previousDirButton = document.getElementById('previousDirButton')
 
 //Relative path
 const uploadUrl = 'modules/upload.php'
@@ -12,20 +13,33 @@ const nextFileUrl = 'modules/nextFile.php'
 let currDir = 'root'
 
 const mainPath = window.location.pathname
+console.log(mainPath)
 const fileContainer = document.getElementById('fileContainer')
 
-window.onload = async () => {
+onload = async () => {
     const files = await userDirectory()
     renderFiles(files, fileContainer)
 }
 
-fileContainer.addEventListener('dblclick', (e) => {
+fileContainer.addEventListener('click', async (e) => {
     if(e.target.getAttribute('data-element')=== "folder"){
         const dirName = e.target.getAttribute('data-name')
         currDir = `${currDir}/${dirName}`
-        nextDirectory(currDir)
+        console.log(currDir)
+        const nextDirFiles = await nextDirectory(currDir) //need to use await here?? 
+        renderFiles(nextDirFiles, fileContainer)
     }
 })
+
+previousDirButton.addEventListener('click', async (e) => {
+    if(currDir !== 'root'){
+        currDir = previousFolder(currDir)
+        const previousDirFiles = await nextDirectory(currDir)
+        renderFiles(previousDirFiles, fileContainer)
+        console.log(currDir)
+    }
+})
+
 
 searchButton.addEventListener('click', (e) => {
     try{
@@ -42,6 +56,8 @@ searchButton.addEventListener('click', (e) => {
     }
 })
 
+
+
 async function nextDirectory(dirName){
     try{
         const response = await fetch(`${mainPath}${nextFileUrl}`,{
@@ -49,10 +65,9 @@ async function nextDirectory(dirName){
         headers: {"content-type": "application/json; chartset=UTF-8"},
         body: JSON.stringify(dirName)
     })
-    console.log(response)
     const nextDirFiles = await response.json()
     console.log(nextDirFiles)
-    renderFiles(nextDirFiles, fileContainer)
+    return nextDirFiles
     } catch(error){
         console.error(error)
     }

@@ -7,8 +7,13 @@
     $filesInFolder = array_diff(scandir($userDirectory,1), array(".", ".."));
     $files = array();
     foreach($filesInFolder as $file){
-        $fileInfo = array();
-        $fileInfo['filename'] = $file; //We'll add more information later,about edition date, creation date and so
+        $filePath = $userDirectory."/".$file;
+        $fileInfo = array(
+            'filename' => $file,
+            'extension' => is_file($filePath)? pathinfo($filePath, PATHINFO_EXTENSION) : 'folder',
+            'lastModifiedDate' => date("F j, Y, g:i a", filemtime($filePath)), //do it more clear and scalable
+            'creationDate' =>  date("F j, Y, g:i a", filectime($filePath))
+        );
         array_push($files, $fileInfo);
     }
     print_r(json_encode($files));

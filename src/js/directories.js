@@ -2,7 +2,7 @@ const mainPath = window.location.pathname //index.php path
 const rootPath = `${previousFolder(mainPath)}/root`
 const initPath = `${previousFolder(mainPath)}/modules/init.php`
 
-async function userDirectory(user) {
+async function userDirectory() {
     try {
         const response = await fetch(initPath, {
             method:'POST',
