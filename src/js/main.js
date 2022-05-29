@@ -5,6 +5,8 @@ import {previousFolder, nextFolder} from './directories.js'
 const searchContent = document.getElementById('searchContent')
 const searchButton = document.getElementById('searchButton')
 const previousDirButton = document.getElementById('previousDirButton')
+const groupBoxBtn = document.getElementById('groupBoxBtn')
+const groupListBtn =  document.getElementById('groupListBtn')
 
 //Relative path
 const uploadUrl = 'modules/upload.php'
@@ -12,34 +14,53 @@ const relSearchFileUrl = 'modules/searchFile.php'
 const nextFileUrl = 'modules/nextFile.php'
 let currDir = 'root'
 
-const mainPath = window.location.pathname
-console.log(mainPath)
+const mainPath = previousFolder(window.location.pathname)
 const fileContainer = document.getElementById('fileContainer')
 
 onload = async () => {
     const files = await userDirectory()
-    renderFiles(files, fileContainer)
+    renderFiles(files, fileContainer, true)
 }
 
-fileContainer.addEventListener('click', async (e) => {
-    if(e.target.getAttribute('data-element')=== "folder"){
+function displayMode(){
+    return groupBoxBtn.classList.contains('active')
+}
+
+groupBoxBtn.addEventListener('click', async () => {
+    if (!groupBoxBtn.classList.contains('active')){
+        groupBoxBtn.classList.toggle('active')
+        groupListBtn.classList.toggle('active')
+        const nextDirFiles = await nextDirectory(currDir)
+        renderFiles(nextDirFiles, fileContainer, displayMode())
+    }
+})
+groupListBtn.addEventListener('click', async () => {
+    if (!groupListBtn.classList.contains('active')){
+        groupListBtn.classList.toggle('active')
+        groupBoxBtn.classList.toggle('active')
+        const nextDirFiles = await nextDirectory(currDir)
+        renderFiles(nextDirFiles, fileContainer, displayMode())
+    }
+})
+
+fileContainer.addEventListener('dblclick', async (e) => {
+    if(e.target.getAttribute('data-element') === "folder"){
+        scrollTo(0,0)
         const dirName = e.target.getAttribute('data-name')
-        currDir = `${currDir}/${dirName}`
-        console.log(currDir)
+        currDir = nextFolder(currDir, dirName)
         const nextDirFiles = await nextDirectory(currDir) //need to use await here?? 
-        renderFiles(nextDirFiles, fileContainer)
+        renderFiles(nextDirFiles, fileContainer, displayMode())
     }
 })
 
 previousDirButton.addEventListener('click', async (e) => {
     if(currDir !== 'root'){
+        scrollTo(0,0)
         currDir = previousFolder(currDir)
         const previousDirFiles = await nextDirectory(currDir)
-        renderFiles(previousDirFiles, fileContainer)
-        console.log(currDir)
+        renderFiles(previousDirFiles, fileContainer, displayMode())
     }
 })
-
 
 searchButton.addEventListener('click', (e) => {
     try{
@@ -56,17 +77,14 @@ searchButton.addEventListener('click', (e) => {
     }
 })
 
-
-
 async function nextDirectory(dirName){
     try{
-        const response = await fetch(`${mainPath}${nextFileUrl}`,{
+        const response = await fetch(`${mainPath}/${nextFileUrl}`,{
         method: 'POST',
         headers: {"content-type": "application/json; chartset=UTF-8"},
         body: JSON.stringify(dirName)
     })
     const nextDirFiles = await response.json()
-    console.log(nextDirFiles)
     return nextDirFiles
     } catch(error){
         console.error(error)

@@ -11,6 +11,7 @@
         $fileInfo = array(
             'filename' => $file,
             'extension' => is_file($filePath)? pathinfo($filePath, PATHINFO_EXTENSION) : 'folder',
+            'size' => filesize($filePath),
             'lastModifiedDate' => date("F j, Y, g:i a", filemtime($filePath)), //do it more clear and scalable
             'creationDate' =>  date("F j, Y, g:i a", filectime($filePath))
         );

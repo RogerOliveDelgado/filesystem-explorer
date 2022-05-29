@@ -501,7 +501,7 @@ body {
 }
 
 .file-container{
-  min-height: 50rem;
+  min-height: fit-content;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -714,3 +714,22 @@ body {
 .module .module-footer a {
   color: #9499a3;
 }
+
+.empty-folder__container{
+  position: relative;
+  left: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50rem;
+}
+
+.empty-folder__img{
+  width: 25rem;
+  aspect-ratio: 1.0;
+}
+
+.file-card-width{
+  margin-left: 2.2rem;
+}
+
