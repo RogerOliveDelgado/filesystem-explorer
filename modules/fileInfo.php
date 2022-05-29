@@ -41,3 +41,13 @@ function size(){
     }   
 }
 
+function getFileInfo(string $path): array {
+    return $fileInfo = array(
+            'filename' => basename($path),
+            'extension' => is_file($path)? pathinfo($path, PATHINFO_EXTENSION) : 'folder',
+            'size' => filesize($path),
+            'lastModifiedDate' => date("F j, Y, g:i a", filemtime($path)),
+            'creationDate' =>  date("F j, Y, g:i a", filectime($path))
+    );
+}
+

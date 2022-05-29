@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("./modules/file-information.php");
+require("./modules/fileInfo.php");
 ?>
 
 
@@ -84,12 +84,12 @@ require("./modules/file-information.php");
                                     <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Report spam"><i class="fa fa-exclamation-triangle"></i></button>
                                     <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></button>
                                 </div>
-                                <!-- <div class="wrap">
+                                <div class="wrap">
                                     <div class="search">
                                         <input type="text" class="searchTerm" id="searchContent" name="searchContent" placeholder="What are you looking for?">
                                         <button type="submit" class="searchButton" id="searchButton"><i class="fa fa-search"></i></button>
                                     </div>
-                                </div> -->
+                                </div>
                                 <button id="previousDirButton">Back</button>
                             </div>
                         </div>

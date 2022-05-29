@@ -9,15 +9,9 @@
     foreach($filesInFolder as $file){
         $filePath = $userDirectory."/".$file;
         $fileExtension = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
-        $fileInfo = array(
-            'filename' => $file,
-            'extension' => is_file($filePath)? $fileExtension : 'folder',
-            'size' => filesize($filePath), //write function to obtain filesize in KB, MB, ...
-            'lastModifiedDate' => date("F j, Y, g:i a", filemtime($filePath)), //do it more clear and scalable
-            'creationDate' =>  date("F j, Y, g:i a", filectime($filePath))
-        );
+        $fileInfo = getFileInfo($filePath);
         array_push($files, $fileInfo);
     }
     print_r(json_encode($files));
-    
+ 
 ?>
