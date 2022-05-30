@@ -50,7 +50,7 @@ require("./modules/fileInfo.php");
                                 <form action="./modules/upload.php" method="POST" enctype = "multipart/form-data">
                                     <div class="form__upload--file">
                                         <input type="file" name="fileToUpload">
-                                    </div>                                
+                                    </div>
                                     <div class="form__upload--file">
                                         <input type ="submit" name="submit" class="btn btn-success"><i class="fa fa-plus"></i>Upload File</input>
                                     </div>
@@ -83,15 +83,13 @@ require("./modules/fileInfo.php");
                                     </ul>
                                 </div>
                                 <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Refresh"><i class="fa fa-refresh"></i></button>
-                                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Archive"><i class="fa fa-archive"></i></button>
+                                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Refresh" data-bs-toggle="modal" data-bs-target="#createFolderModal"><i class="fa-solid fa-folder-plus"></i></button>
+                                    <!-- <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Archive"><i class="fa fa-archive"></i></button>
                                     <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Report spam"><i class="fa fa-exclamation-triangle"></i></button>
-                                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></button>
+                                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></button> -->
                                 </div>
                                 
                             </div>
-
-
                             <div class="wrap">
                                     <div class="search">
                                         <input type="text" class="searchTerm" id="searchContent" name="searchContent" placeholder="What are you looking for?">
@@ -99,9 +97,6 @@ require("./modules/fileInfo.php");
                                     </div>
                                 </div>
                                 <button id="previousDirButton" class="btn btn-back"><i class="fa-solid fa-arrow-left "></i></button>
-
-
-
                         </div>
                         <div>
                             <ul class="folderTrack" id="folderTrack"></ul>
@@ -111,6 +106,47 @@ require("./modules/fileInfo.php");
                     </div>
                 </div>
             </section>
+        </div>
+    </div>
+    <div class="modal" id="editModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit name file</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                 </div>
+                <div class="modal-body">
+                    <p>New name file</p>
+                    <input id="editFolderNameInput" type="text">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="editFolderBtn" data-bs-dismiss="modal">Edit Name</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Create Folder-->
+    <div class="modal" id="createFolderModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Folder</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                 </div>
+                <div class="modal-body">
+                    <p>Folder Name</p>
+                    <input id="newFolderNameInput" type="text" name="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="createFolderBtn" data-bs-dismiss="modal">Create Folder</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -754,3 +754,7 @@ body {
 .folderTrack {
   padding-inline-start: 0px;
 }
+
+.file-operation:hover{
+  cursor: pointer;
+}

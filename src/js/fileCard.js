@@ -28,8 +28,8 @@ const createFileCard = params => {
                 </div>
                 <div class="drive-item-footer module-footer">
                     <ul class="utilities list-inline">
-                        <li><i class="fa fa-edit"></i></li>
-                        <li><i class="fa fa-trash"></i></li>
+                        <li><i class="fa fa-edit file-operation" data-file-operation = "edit" data-name="${params.filename}" data-bs-toggle="modal" data-bs-target="#editModal"></i></li>
+                        <li><i class="fa fa-trash file-operation" data-file-operation = "delete" data-name="${params.filename}"></i></li>
                     </ul>
                 </div>
             </div>`

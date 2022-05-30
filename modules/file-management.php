@@ -4,16 +4,24 @@
 // $pathFile = 'C:/xampp/htdocs/filesystem-explorer/root/adios.jpg';
 // $fileName = pathinfo($pathFile)['filename'];
 
-function deleteFile($path){
-    // var_dump (is_file($path));
-    if (is_file($path)){
-        return unlink($path);
-    } else {
-        echo "Error: This is not a file";
-    }    
-}
+// function deleteFile($path){
+//     // var_dump (is_file($path));
+//     if (is_file($path)){
+//         return unlink($path);
+//     } else {
+//         echo "Error: This is not a file";
+//     }    
+// }
 // deleteFile('C:/xampp/htdocs/filesystem-explorer/root/image-7.jpg');
 
+$data = json_decode(file_get_contents("php://input"));
+// function doFileOperation(string $path, string $operation);
+
+function deleteFile(string $path): bool {
+    if (is_file($path)){
+        return unlink($path);
+    } 
+}
 
 function renameFile($path, $newName){
     // echo "<pre>";
@@ -41,10 +49,10 @@ function editFile($path, $newText){
 // editFile('C:/xampp/htdocs/filesystem-explorer/root/always.txt', "weekend2");
 
 
-$pathFile = 'C:/xampp/htdocs/filesystem-explorer/root/adios.jpg';
+// $pathFile = 'C:/xampp/htdocs/filesystem-explorer/root/adios.jpg';
 
-echo "<pre>";
-print_r(pathinfo($pathFile));
+// echo "<pre>";
+// print_r(pathinfo($pathFile));
 
 function moveFile($origin, $dest){
     $dirName = pathinfo($dest)['dirname'];
@@ -67,36 +75,3 @@ moveFile('C:/xampp/htdocs/filesystem-explorer/root/image-3.jpg', 'C:/xampp/htdoc
 // Folders
 // $pathFolder = "C:/xampp/htdocs/filesystem-explorer/root/julitoFolder";
 // print_r (pathinfo($pathFolder));
-
-
-function createFolder($newfolder){
-    if (!is_dir('../root/'.$newfolder)){
-        mkdir('../root/'.$newfolder);
-    }else{
-        echo("Error: This folder exits");
-    }
-}
-// createFolder('carmen');
-
-
-function editFolder($path, $newFolder){
-    $folderBaseName = pathinfo($path, PATHINFO_BASENAME);    
-    if (is_dir($path)){            
-        rename("../root/$folderBaseName", "../root/$newFolder");
-    }else{
-        echo "Error: This is not a folder. Please select a folder";
-    }
-}
-// editFolder('C:/xampp/htdocs/filesystem-explorer/root/joselito111333',"julito");
-
-
-function deleteFolder($path){
-    $folderBaseName = pathinfo($path, PATHINFO_BASENAME);
-// var_dump (is_dir($path));
-    if (is_dir($path)){
-        return rmdir($path);
-    } else{
-        echo "This folder doesn´t exits";
-    }    
-}
-// deleteFolder("C:/xampp/htdocs/filesystem-explorer/root/Macarena");
