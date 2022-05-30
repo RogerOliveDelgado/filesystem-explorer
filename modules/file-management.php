@@ -41,11 +41,6 @@ function editFile($path, $newText){
 // editFile('C:/xampp/htdocs/filesystem-explorer/root/always.txt', "weekend2");
 
 
-$pathFile = 'C:/xampp/htdocs/filesystem-explorer/root/adios.jpg';
-
-echo "<pre>";
-print_r(pathinfo($pathFile));
-
 function moveFile($origin, $dest){
     $dirName = pathinfo($dest)['dirname'];
     $fileName = pathinfo($dest)["filename"];
@@ -60,7 +55,7 @@ function moveFile($origin, $dest){
 
 }
 
-moveFile('C:/xampp/htdocs/filesystem-explorer/root/image-3.jpg', 'C:/xampp/htdocs/filesystem-explorer/root/julito/image-3.jpg');
+// moveFile('C:/xampp/htdocs/filesystem-explorer/root/hola.txt', 'C:/xampp/htdocs/filesystem-explorer/root/Garcia/hola.txt');
 
 // ----------------------------------
 // ----------------------------------
