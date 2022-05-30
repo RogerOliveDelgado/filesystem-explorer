@@ -361,6 +361,10 @@ body {
   color: #494d55;
 }
 
+.form__upload--file {
+  margin: 1rem 0;
+}
+
 .drive-wrapper {
   padding: 15px;
   background: #f5f5f5;
@@ -500,7 +504,7 @@ body {
   width: 6rem;
 }
 
-.file-container{
+.file-container {
   min-height: fit-content;
 }
 
@@ -518,12 +522,14 @@ body {
 }
 
 .searchTerm {
-  width: 100%;
+  width: 20.5rem;
   border: 3px solid #00b4cc;
-  border-right: none;
-  padding: 5px;
+  /* border-right: none; */
+  margin-bottom: 1rem;
+  padding: 1.3rem;
+  /* padding: 6px 12px; */
   height: 20px;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px;
   outline: none;
   color: #9dbfaf;
 }
@@ -532,7 +538,19 @@ body {
   color: #00b4cc;
 }
 
-.searchButton {
+.btn-back {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  border-radius: 5px;
+  width: 9rem;
+}
+
+.btn-back:hover {
+  background-color: #e6e6e6;
+}
+
+/* .searchButton {
   width: 40px;
   height: 36px;
   border: 1px solid #00b4cc;
@@ -542,16 +560,16 @@ body {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
-}
+} */
 
 /*Resize the wrap to see the search bar change!*/
-.wrap {
+/* .wrap {
   width: 30%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 @media (max-width: 767px) {
   .view-account .content-panel .title {
@@ -715,7 +733,7 @@ body {
   color: #9499a3;
 }
 
-.empty-folder__container{
+.empty-folder__container {
   position: relative;
   left: 175px;
   display: flex;
@@ -724,16 +742,15 @@ body {
   width: 50rem;
 }
 
-.empty-folder__img{
+.empty-folder__img {
   width: 25rem;
-  aspect-ratio: 1.0;
+  aspect-ratio: 1;
 }
 
-.file-card-width{
+.file-card-width {
   margin-left: 2.2rem;
 }
 
-.folderTrack{
+.folderTrack {
   padding-inline-start: 0px;
 }
-

@@ -49,8 +49,12 @@ require("./modules/fileInfo.php");
                             <h2 class="title">Assembler Drive</h2>
                             <div class="actions">
                                 <form action="./modules/upload.php" method="POST" enctype = "multipart/form-data">
-                                    <input type="file" name="fileToUpload">
-                                    <input type ="submit" name="submit" class="btn btn-success"><i class="fa fa-plus"></i>Upload File</input>
+                                    <div class="form__upload--file">
+                                        <input type="file" name="fileToUpload">
+                                    </div>                                
+                                    <div class="form__upload--file">
+                                        <input type ="submit" name="submit" class="btn btn-success"><i class="fa fa-plus"></i>Upload File</input>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -85,14 +89,20 @@ require("./modules/fileInfo.php");
                                     <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Report spam"><i class="fa fa-exclamation-triangle"></i></button>
                                     <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></button>
                                 </div>
-                                <div class="wrap">
+                                
+                            </div>
+
+
+                            <div class="wrap">
                                     <div class="search">
                                         <input type="text" class="searchTerm" id="searchContent" name="searchContent" placeholder="What are you looking for?">
-                                        <button type="submit" class="searchButton" id="searchButton"><i class="fa fa-search"></i></button>
+                                        <!-- <button type="submit" class="searchButton" id="searchButton"><i class="fa fa-search"></i></button> -->
                                     </div>
                                 </div>
-                                <button id="previousDirButton">Back</button>
-                            </div>
+                                <button id="previousDirButton" class="btn btn-back"><i class="fa-solid fa-arrow-left "></i></button>
+
+
+
                         </div>
                         <div>
                             <ul class="folderTrack" id="folderTrack"></ul>
