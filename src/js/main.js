@@ -74,8 +74,7 @@ previousDirButton.addEventListener('click', async (e) => {
     }
 })
 
-
-searchContent.addEventListener( 'input' , async() => {
+searchContent.addEventListener('input' , async() => {
         if(searchContent.value!==''){
             const matchedFiles = await getMatchedFiles(searchContent.value)
             renderFiles(matchedFiles, fileContainer, displayMode())
@@ -117,4 +116,3 @@ async function getDirectoryFiles(dirName){
         console.error(error)
     }
 }
-

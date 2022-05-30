@@ -3,7 +3,6 @@ session_start();
 require("./modules/fileInfo.php");
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +27,12 @@ require("./modules/fileInfo.php");
                 <div class="module-inner">
                     <div class="side-bar">
                         <div class="user-info">
-                            <img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
+                            <img class="img-profile img-circle img-responsive center-block" src="./src/img/darth-vader.png" alt="">
                             <ul class="meta list list-unstyled">
-                                <li class="name">Roger Olivé
+                                <li class="name">Darth Vader
                                     <label class="label label-info">Full Stack Developer</label>
                                 </li>
-                                <li class="email"><a href="#">roger@gmail.com</a></li>
+                                <li class="email"><a href="#">darth@vader.com</a></li>
                                 <li class="activity">Last logged in: 24/05/2022 at 2:18pm</li>
                             </ul>
                         </div>

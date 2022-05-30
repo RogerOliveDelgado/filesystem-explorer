@@ -17,7 +17,6 @@ function creationDate(){
         return $creationDate;               
 }
 
-
 // Date which files and directories were modified
 function lastModifiedDate(){
     // * PENDING -> Before start with functions that allows to modify the files and directories
@@ -28,7 +27,6 @@ function extension(){
     return $_SESSION["fileTypeExtension"];
 }
 
- 
 function size(){
     // less than 1 MB show KB, otherwise show MB
     // $_FILE["...."][size] => bytes  
