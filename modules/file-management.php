@@ -1,7 +1,7 @@
 <?php
 
 // Files
-// $pathFile = 'C:/xampp/htdocs/filesystem-explorer/root/josele.jpg';
+// $pathFile = 'C:/xampp/htdocs/filesystem-explorer/root/adios.jpg';
 // $fileName = pathinfo($pathFile)['filename'];
 
 function deleteFile($path){
@@ -25,7 +25,7 @@ function renameFile($path, $newName){
         echo "Error: This is not a file";
     }       
 }
-// renameFile('C:/xampp/htdocs/filesystem-explorer/root/fff.jpg', "123.jpg");
+renameFile('C:/xampp/htdocs/filesystem-explorer/root/image-3.jpg', "C:/xampp/htdocs/filesystem-explorer/root/julito/image-3.jpg");
 
 
 function editFile($path, $newText){
@@ -41,6 +41,26 @@ function editFile($path, $newText){
 // editFile('C:/xampp/htdocs/filesystem-explorer/root/always.txt', "weekend2");
 
 
+$pathFile = 'C:/xampp/htdocs/filesystem-explorer/root/adios.jpg';
+
+echo "<pre>";
+print_r(pathinfo($pathFile));
+
+function moveFile($origin, $dest){
+    $dirName = pathinfo($dest)['dirname'];
+    $fileName = pathinfo($dest)["filename"];
+    $extension = pathinfo($dest)["extension"];
+
+    if (file_exists($dest)) {
+        echo ("This file already exist");                 
+        return rename($origin,"$dirName/$fileName-copy.$extension");         
+    }else{ 
+        return rename($origin, $dest);
+    }   
+
+}
+
+moveFile('C:/xampp/htdocs/filesystem-explorer/root/image-3.jpg', 'C:/xampp/htdocs/filesystem-explorer/root/julito/image-3.jpg');
 
 // ----------------------------------
 // ----------------------------------
