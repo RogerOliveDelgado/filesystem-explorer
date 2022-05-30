@@ -1,4 +1,4 @@
-import renderFiles from './fileCard.js'
+import {renderFiles, showPath} from './fileCard.js'
 
 const searchContent = document.getElementById('searchContent')
 // const searchButton = document.getElementById('searchButton')
@@ -15,10 +15,12 @@ const uploadUrl = `${mainPath}/modules/upload.php`
 const userUrl = 'root'
 let currDir = 'root'
 
+const searchOperations = ['input']
 
 onload = async () => {
     const files = await getDirectoryFiles(currDir)
     renderFiles(files, fileContainer, displayMode())
+    showPath(currDir)
 }
 
 function displayMode(){
@@ -38,6 +40,7 @@ groupBoxBtn.addEventListener('click', async () => {
         groupListBtn.classList.toggle('active')
         const nextDirFiles = await getDirectoryFiles(currDir)
         renderFiles(nextDirFiles, fileContainer, displayMode())
+        showPath(currDir)
     }
 })
 groupListBtn.addEventListener('click', async () => {
@@ -46,6 +49,7 @@ groupListBtn.addEventListener('click', async () => {
         groupBoxBtn.classList.toggle('active')
         const nextDirFiles = await getDirectoryFiles(currDir)
         renderFiles(nextDirFiles, fileContainer, displayMode())
+        showPath(currDir)
     }
 })
 
@@ -56,6 +60,7 @@ fileContainer.addEventListener('dblclick', async (e) => {
         currDir = nextFolder(currDir, dirName)
         const nextDirFiles = await getDirectoryFiles(currDir) //need to use await here?? 
         renderFiles(nextDirFiles, fileContainer, displayMode())
+        showPath(currDir)
     }
 })
 
@@ -65,13 +70,23 @@ previousDirButton.addEventListener('click', async (e) => {
         currDir = previousFolder(currDir)
         const previousDirFiles = await getDirectoryFiles(currDir)
         renderFiles(previousDirFiles, fileContainer, displayMode())
+        showPath(currDir)
     }
 })
 
-searchContent.addEventListener('input', async() => {
-    const matchedFiles = await getMatchedFiles(searchContent.value)
-    console.log(searchContent.value)
-    renderFiles(matchedFiles, fileContainer, displayMode())
+
+searchContent.addEventListener( 'input' , async() => {
+        if(searchContent.value!==''){
+            const matchedFiles = await getMatchedFiles(searchContent.value)
+            renderFiles(matchedFiles, fileContainer, displayMode())
+        } else {
+            const dirFiles = await getDirectoryFiles(currDir)
+            renderFiles(dirFiles, fileContainer, displayMode())
+        }
+    })
+
+searchContent.addEventListener('change', () => {
+    searchContent.value = ''
 })
 
 async function getMatchedFiles(inputStr) {
@@ -91,7 +106,6 @@ async function getMatchedFiles(inputStr) {
 
 async function getDirectoryFiles(dirName){
     try{
-        console.log(dirName)
         const response = await fetch(getFilesUrl,{
         method: 'POST',
         headers: {"content-type": "application/json; chartset=UTF-8"},

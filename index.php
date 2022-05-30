@@ -39,7 +39,8 @@ require("./modules/fileInfo.php");
                         </div>
                         <nav class="side-menu">
                             <ul class="nav">
-                                <li class="active"><a href="#"><span class="fa fa-user"></span> Files</a></li>
+                                <li class="active"><a href="#"><span class="fa-solid fa-folder"></span> Files</a></li>
+                                <li class=""><a href="#"><span class="fa-solid fa-trash"></span> Trash</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -93,9 +94,11 @@ require("./modules/fileInfo.php");
                                 <button id="previousDirButton">Back</button>
                             </div>
                         </div>
+                        <div>
+                            <ul class="folderTrack" id="folderTrack"></ul>
+                        </div>
                         <div class="drive-wrapper drive-grid-view" >
-                            <div id = "fileContainer" class="grid-items-wrapper file-container">
-                            </div>
+                            <div id = "fileContainer" class="grid-items-wrapper file-container"></div>
                     </div>
                 </div>
             </section>

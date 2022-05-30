@@ -95,4 +95,17 @@ function renderFiles(fileArray, fileContainer, isDefault){
     }
 }
 
-export default renderFiles
+function showPath(path){
+    const folderTrack = document.getElementById('folderTrack')
+    folderTrack.textContent = ''
+    const folderArray = path.split('/')
+    for (const folder of folderArray){
+        const element = document.createElement('li')
+        element.style.listStyle = 'none'
+        element.style.display = 'inline'
+        element.innerHTML = ` <i class="${iconClass.folder}"></i> ${folder} >`
+        folderTrack.append(element)
+    }
+}
+
+export {renderFiles, showPath}
